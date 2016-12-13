@@ -37,7 +37,7 @@
       "target": "squirrel"
     },
     "squirrelWindows": {
-      "iconUrl": "https://s3.cn-north-1.amazonaws.com.cn/mtool/icon.ico",
+      "iconUrl": "https://raw.githubusercontent.com/alexlee85/electron-ts-react-skeleton/master/release-resources/icon.ico",
       "msi": false
     }
   },
