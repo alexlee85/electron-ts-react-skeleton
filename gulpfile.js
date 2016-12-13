@@ -42,11 +42,16 @@ gulp.task("gen-app-package-json", () => {
 
     return gulp.src("package.json")
         .pipe(jeditor((json) => {
-            delete json["devDependencies"];
-            delete json["scripts"];
-            delete json["private"];
+            let newJson = {
+                name: json.name,
+                description: json.description,
+                version: json.version,
+                main: json.main,
+                author: json.author,
+                dependencies: json.dependencies
+            };
 
-            return json;
+            return newJson;
         }))
         .pipe(gulp.dest("dist"));
 

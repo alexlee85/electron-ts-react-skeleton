@@ -1,11 +1,50 @@
 {
   "name": "electron-ts-react-skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "electron-ts-react-skeleton",
   "private": "true",
   "main": "main/Launcher.js",
-  "scripts": {},
+  "scripts": {
+    "release": "build --mac"
+  },
   "author": "Alex",
+  "directories": {
+    "buildResources": "release-resources",
+    "output": "release",
+    "app": "dist"
+  },
+  "build": {
+    "appId": "com.github.electron-ts-react-skeleton",
+    "dmg": {
+      "window": {
+        "width": "550",
+        "height": "320"
+      },
+      "contents": [
+        {
+          "x": 130,
+          "y": 180
+        },
+        {
+          "x": 410,
+          "y": 180,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://s3.cn-north-1.amazonaws.com.cn/mtool/icon.ico",
+      "msi": false
+    }
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
   "devDependencies": {
     "@types/electron": "^1.4.29",
     "@types/es6-promise": "0.0.32",
@@ -14,6 +53,7 @@
     "@types/react-dom": "^0.14.19",
     "css-loader": "^0.26.1",
     "electron": "^1.4.11",
+    "electron-builder": "^10.7.0",
     "electron-connect": "^0.6.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
@@ -37,9 +77,5 @@
     "typescript": "^2.1.4",
     "url-loader": "^0.5.7",
     "webpack-stream": "^3.2.0"
-  },
-  "dependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
   }
 }
